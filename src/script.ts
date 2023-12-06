@@ -1,48 +1,51 @@
 // selecting elements
-const imageEl = document.getElementsByClassName("image-wrap")[0];
-const Body = document.querySelector("body");
+const imageEl = document.getElementsByClassName("image-Element")[0];
+const imageWrap: any = document.getElementsByClassName("image-wrap")[0];
 // functions
 const likeImg = (e) => {
   console.log(e);
 
-  // Access the target element from the event
-  const targetElement = e.target;
+  const X = e.clientX;
+  const Y = e.clientY;
 
-  // Check if the target element exists
-  if (targetElement) {
-    const clickedX = e.clientX;
-    const clickedY = e.clientY;
+  const leftOffset = e.target.offsetLeft;
+  const topOffset = e.target.offsetTop;
 
-    // Access offsetHeight and offsetWidth from the target element
-    const offH = targetElement.offsetLeft;
-    const offW = targetElement.offsetTop;
+  const insideX = X - leftOffset;
+  const insideY = Y - topOffset;
 
-    console.log(offH, offW);
-    console.log(clickedX, clickedY);
+  console.log(X, Y);
+  console.log(leftOffset, topOffset);
+  console.log(insideX, insideY);
 
-    const hightMeter = clickedX - offH;
-    const widthMeter = clickedY - offW;
+  const heartEl = document.createElement("img");
+  heartEl.src = "./assets/heart-png-15.png";
+  heartEl.style.position = "absolute";
+  imageWrap.style.position = "absolute";
 
-    console.log(hightMeter, widthMeter);
-  }
+  heartEl.style.top = `${insideY}px`;
+  heartEl.style.left = `${insideX}px`;
+
+  heartEl.classList.add("heart-Img");
+  setTimeout(() => {
+    heartEl.classList.add("active");
+  }, 500);
+  setTimeout(() => {
+    heartEl.classList.remove("active");
+
+    setTimeout(() => {
+      heartEl.remove();
+      imageWrap.style.position = "";
+    }, 600);
+  }, 1100);
+  imageWrap.appendChild(heartEl);
 };
 
 // Event listener
-imageEl.addEventListener("dblclick", (e) => {
+imageWrap.addEventListener("dblclick", (e) => {
   likeImg(e);
 });
 
-//   console.log("double Clicked");
-//   const heartEl = document.createElement("img");
-//   heartEl.src = "./assets/heart-png-15.png";
-//   heartEl.classList.add("heart-Img");
-//   setTimeout(() => {
-//     heartEl.classList.add("active");
-//   }, 500);
-//   setTimeout(() => {
-//     heartEl.classList.remove("active");
-//     setTimeout(() => {
-//       heartEl.remove();
-//     }, 1100);
-//   }, 1100);
-//   Body?.appendChild(heartEl);
+imageWrap.addEventListener("tab", (e) => {
+  likeImg(e);
+});

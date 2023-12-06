@@ -22,7 +22,6 @@ body {
   background-color: #31304d;
   border: solid #f0ece5 5px;
   border-radius: 15px;
-  overflow: hidden;
 }
 
 .header .head-Wrap .text-Wrap {
@@ -42,13 +41,13 @@ body {
 }
 
 .header .head-Wrap .image-wrap {
-  height: 60%;
+  display: flex;
   text-align: center;
   align-items: center;
+  justify-content: center;
 }
 
-.header .head-Wrap .image-wrap .image-Element {
-  height: 100%;
+.header .head-Wrap .image-Element {
   text-align: center;
   align-items: center;
   -webkit-user-drag: none;
@@ -56,6 +55,9 @@ body {
 
 .heart-Img {
   transition: all;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  position: absolute;
   transition-duration: 500ms;
   height: 45px;
   width: 45px;
