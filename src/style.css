@@ -4,6 +4,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 
 .header {
@@ -14,6 +15,8 @@ body {
   flex-direction: column;
   height: 100vh;
   background-color: #161a30;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .header .head-Wrap {

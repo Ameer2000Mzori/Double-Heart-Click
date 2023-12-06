@@ -1,9 +1,15 @@
 // selecting elements
 const imageEl = document.getElementsByClassName("image-Element")[0];
 const imageWrap: any = document.getElementsByClassName("image-wrap")[0];
+const pEl = document.getElementsByClassName("pEl")[0];
+// golobal varibale
+let countLikes = 0;
+
 // functions
 const likeImg = (e) => {
-  console.log(e);
+  countLikes += 1;
+
+  console.log(countLikes);
 
   const X = e.clientX;
   const Y = e.clientY;
@@ -39,13 +45,16 @@ const likeImg = (e) => {
     }, 600);
   }, 1100);
   imageWrap.appendChild(heartEl);
+
+  updateLikes(countLikes);
+};
+
+// update likes function
+const updateLikes = (countLikes) => {
+  pEl.textContent = `YOU LIKE IT ${countLikes} TIMES`;
 };
 
 // Event listener
 imageWrap.addEventListener("dblclick", (e) => {
-  likeImg(e);
-});
-
-imageWrap.addEventListener("tab", (e) => {
   likeImg(e);
 });

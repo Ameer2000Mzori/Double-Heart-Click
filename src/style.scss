@@ -11,6 +11,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: $fontOne;
+  overflow: hidden;
 }
 
 .header {
@@ -21,6 +22,8 @@ body {
   flex-direction: column;
   height: 100vh;
   background-color: $colorThree;
+  overflow: hidden;
+  z-index: 1;
 
   .head-Wrap {
     height: 500px;

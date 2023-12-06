@@ -1,9 +1,13 @@
 // selecting elements
 var imageEl = document.getElementsByClassName("image-Element")[0];
 var imageWrap = document.getElementsByClassName("image-wrap")[0];
+var pEl = document.getElementsByClassName("pEl")[0];
+// golobal varibale
+var countLikes = 0;
 // functions
 var likeImg = function (e) {
-    console.log(e);
+    countLikes += 1;
+    console.log(countLikes);
     var X = e.clientX;
     var Y = e.clientY;
     var leftOffset = e.target.offsetLeft;
@@ -31,11 +35,13 @@ var likeImg = function (e) {
         }, 600);
     }, 1100);
     imageWrap.appendChild(heartEl);
+    updateLikes(countLikes);
+};
+// update likes function
+var updateLikes = function (countLikes) {
+    pEl.textContent = "YOU LIKE IT ".concat(countLikes, " TIMES");
 };
 // Event listener
 imageWrap.addEventListener("dblclick", function (e) {
-    likeImg(e);
-});
-imageWrap.addEventListener("tab", function (e) {
     likeImg(e);
 });
