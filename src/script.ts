@@ -1,1 +1,6 @@
-console.log("hallo world");
+// selecting elements
+const imageEl = document.getElementsByClassName("image-Element") as any;
+
+// functions
+
+// event lisnters
