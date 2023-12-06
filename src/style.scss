@@ -46,11 +46,17 @@ body {
       }
     }
 
-    .image-Element {
+    .image-wrap {
       height: 60%;
       text-align: center;
       align-items: center;
-      -webkit-user-drag: none;
+
+      .image-Element {
+        height: 100%;
+        text-align: center;
+        align-items: center;
+        -webkit-user-drag: none;
+      }
     }
   }
 }

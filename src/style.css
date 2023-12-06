@@ -41,8 +41,14 @@ body {
   color: #f0ece5;
 }
 
-.header .head-Wrap .image-Element {
+.header .head-Wrap .image-wrap {
   height: 60%;
+  text-align: center;
+  align-items: center;
+}
+
+.header .head-Wrap .image-wrap .image-Element {
+  height: 100%;
   text-align: center;
   align-items: center;
   -webkit-user-drag: none;
