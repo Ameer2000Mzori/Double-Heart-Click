@@ -60,3 +60,16 @@ body {
     }
   }
 }
+
+.heart-Img {
+  transition: all;
+  transition-duration: 500ms;
+  height: 45px;
+  width: 45px;
+  opacity: 0;
+}
+
+.heart-Img.active {
+  transform: scale(2);
+  opacity: 1;
+}
