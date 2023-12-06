@@ -3,7 +3,54 @@
 $fontOne: "Roboto", sans-serif;
 $fontTwo: "Kenia", sans-serif;
 
+$colorOne: #f0ece5;
+$colorTwo: #31304d;
+$colorThree: #161a30;
+
 body {
   padding: 0;
   margin: 0;
+  font-family: $fontOne;
+}
+
+.header {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $colorThree;
+
+  .head-Wrap {
+    height: 500px;
+    width: 250px;
+    background-color: $colorTwo;
+    border: solid #f0ece5 5px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    .text-Wrap {
+      height: 40%;
+
+      h1 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #f0ece5;
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: 500;
+        color: #f0ece5;
+      }
+    }
+
+    .image-Element {
+      height: 60%;
+      text-align: center;
+      align-items: center;
+      -webkit-user-drag: none;
+    }
+  }
 }
